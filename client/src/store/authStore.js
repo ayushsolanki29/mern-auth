@@ -1,7 +1,7 @@
 import axios from "axios";
 import { create } from "zustand";
 
-const SERVER_URL = "http://localhost:5000";
+const SERVER_URL = import.meta.env.MODE === "production" ? "https://mern-auth-39mb.onrender.com":"http://localhost:5000";
 const API_URL = "/api/auth";
 axios.defaults.withCredentials = true;
 export const useAuthStore = create((set) => ({
